@@ -1,70 +1,88 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:monospace;
+    font-family: monospace;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: #ffccff;
 }
-.container
-{
-    position: relative;
+
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap : 30px;
     background: #ff80aa;
     padding: 40px 60px;
+    gap: 30px;
 }
-h2
-{
+
+h2 {
     font-size: 3em;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-.reset
-{
+
+.reset {
     padding: 15px 20px;
     color: #f00;
     background: #fff;
     border: none;
     font-size: 1.5em;
-    letter-spacing: 0.1em;
     text-transform: uppercase;
-    cursor:pointer;
+    cursor: pointer;
     font-weight: 600;
 }
-.reset:focus
-{
-    color: #fff;
-    background: #f00;
-}
 
-.game
-{
-    width: 440px;
-    height: 440px;
+.game {
     display: flex;
     flex-wrap: wrap;
-    gap: 10 px;
-    transform-style: preserve-3d;
-    perspective: 500px; 
+    gap: 10px;
+    width: 370px;
+    height: 370px;
+    background: #ed92c3;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.item
-{
+
+.item {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    color: #000;
     display: flex;
     justify-content: center;
-    font-size: 3em;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    transition: transform 0.4s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    z-index: 1;
+}
+
+.item.boxOpen::after,
+.item.boxMatch::after {
+    transform: rotateY(180deg);
+    z-index: -1;
 }
