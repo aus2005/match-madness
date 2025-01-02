@@ -39,6 +39,10 @@ h2 {
     cursor: pointer;
     font-weight: 600;
 }
+.reset:focus{
+    color: #fff;
+    background: #f00;   
+}
 
 .game {
     display: flex;

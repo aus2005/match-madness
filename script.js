@@ -41,7 +41,6 @@ shuffle.forEach((pic) => {
     box.innerHTML = pic; 
     box.style.transform = "rotateY(180deg)"; 
 
-    // Add click event for flipping cards
     box.addEventListener('click', () => {
         if (box.classList.contains('boxOpen') || box.classList.contains('boxMatch')) {
             return; // Ignore if the card is already open or matched
